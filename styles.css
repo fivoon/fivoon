@@ -267,13 +267,18 @@ header nav a:hover {
 
 /* Mobile Menu Styles */
 #mobile-menu {
-    display: none;
-    background-color: white;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
 }
 
 #mobile-menu.hidden {
     display: none;
+}
+
+#mobile-menu:not(.hidden) {
+    display: block;
+    max-height: 500px;
 }
 
 #mobile-menu a {
@@ -615,4 +620,20 @@ a[href="#contact"] span.text-white {
 /* Project cards - Only show category */
 .project-card .flex.flex-wrap.gap-2.mb-4 {
     display: none;
+}
+
+/* Additional styles for mobile menu */
+@media (max-width: 768px) {
+    #mobile-menu-button {
+        display: block !important;
+    }
+    
+    #mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 } 

@@ -4,14 +4,43 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
+    // Mobile menu toggle with improved functionality
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
     if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
+        console.log('Mobile menu elements found');
+        
+        // Force initial state
+        mobileMenu.classList.add('hidden');
+        
+        mobileMenuButton.addEventListener('click', function(e) {
+            console.log('Mobile menu button clicked');
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle the menu visibility
             mobileMenu.classList.toggle('hidden');
+            console.log('Menu visibility toggled. Hidden:', mobileMenu.classList.contains('hidden'));
         });
+        
+        // Close menu when clicking menu items
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                console.log('Menu closed after clicking link');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton && !mobileMenuButton.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    } else {
+        console.error('Mobile menu elements not found');
     }
     
     // Throttle function to limit how often a function runs

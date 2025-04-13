@@ -7,6 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
     <script>
         tailwind.config = {
             theme: {
@@ -83,11 +89,11 @@
             </div>
         </div>
         <!-- Mobile menu, hidden by default -->
-        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 shadow-md">
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 shadow-lg w-full z-50 absolute top-full left-0">
             <div class="container mx-auto px-4 py-3 space-y-3">
                 <a href="#about" class="block text-gray-300 hover:text-primary-500 transition-colors py-2 border-b border-gray-700">About</a>
                 <a href="#process" class="block text-gray-300 hover:text-primary-500 transition-colors py-2 border-b border-gray-700">Process</a>
-                <a href="#portfolio" class="block text-gray-300 hover:text-primary-500 transition-colors py-2 border-b border-gray-700">Portfolio</a>
+                <a href="#faq" class="block text-gray-300 hover:text-primary-500 transition-colors py-2 border-b border-gray-700">FAQs</a>
                 <a href="#pricing" class="block text-gray-300 hover:text-primary-500 transition-colors py-2 border-b border-gray-700">Pricing</a>
                 <a href="https://x.com/meet244" target="_blank" class="flex items-center justify-center bg-dark-700 hover:bg-dark-600 text-gray-400 hover:text-white py-2 px-4 rounded-md transition-all duration-300 text-center mt-4">
                     <span class="font-bold mr-1" style="font-family: Arial, sans-serif;">𝕏</span>
@@ -610,6 +616,53 @@
             // Toggle current FAQ
             answer.classList.toggle('hidden');
             icon.classList.toggle('rotate-180');
+        }
+        
+        // Improved mobile menu toggle with more robust implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                // Initialize - ensure menu is hidden on page load
+                mobileMenu.classList.add('hidden');
+                
+                // Add click event listener
+                mobileMenuButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    mobileMenu.classList.toggle('hidden');
+                    console.log('Mobile menu toggled');
+                });
+                
+                // Hide menu when clicking on menu items
+                const mobileMenuItems = mobileMenu.querySelectorAll('a');
+                mobileMenuItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+                
+                // Hide menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            } else {
+                console.error('Mobile menu elements not found');
+            }
+        });
+        
+        // Also add immediate execution version as backup
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                console.log('Mobile menu clicked');
+            });
         }
     </script>
 </body>
