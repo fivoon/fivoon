@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Fivoon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#fffde7',
+                            100: '#fff9c4',
+                            200: '#fff59d',
+                            300: '#fff176',
+                            400: '#ffee58',
+                            500: '#ffeb3b',  /* Main yellow */
+                            600: '#fdd835',
+                            700: '#fbc02d',
+                            800: '#f9a825',
+                            900: '#f57f17',
+                        },
+                        dark: {
+                            100: '#d5d5d5',
+                            200: '#ababab',
+                            300: '#808080',
+                            400: '#565656',
+                            500: '#2b2b2b',
+                            600: '#232323',
+                            700: '#1a1a1a',
+                            800: '#121212',
+                            900: '#090909',
+                        }
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Header -->
+    <header class="bg-dark-900 text-white py-4 z-50 fixed w-full shadow-lg transition-all duration-300">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html">
+                    <img src="logo.png" alt="Fivoon" class="h-10">
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html#about" class="text-gray-300 hover:text-primary-500 transition-colors font-medium text-base relative group">
+                    About
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="index.html#process" class="text-gray-300 hover:text-primary-500 transition-colors font-medium text-base relative group">
+                    Process
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="index.html#portfolio" class="text-gray-300 hover:text-primary-500 transition-colors font-medium text-base relative group">
+                    Portfolio
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="index.html#pricing" class="text-gray-300 hover:text-primary-500 transition-colors font-medium text-base relative group">
+                    Pricing
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+            <div>
+                <a href="https://x.com/meet244" target="_blank" class="hidden md:inline-flex items-center bg-dark-800 hover:bg-dark-700 text-gray-400 hover:text-white rounded-full overflow-hidden transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    <span class="flex items-center px-3 py-2 border-r border-gray-700">
+                        <span class="font-bold mr-1 text-lg" style="font-family: Arial, sans-serif;">𝕏</span>
+                        <span class="ml-1 font-medium">@meet244</span>
+                    </span>
+                    <span class="px-3 py-2 font-medium text-sm">Follow Us</span>
+                </a>
+                <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-primary-500 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu, hidden by default -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 shadow-md">
+            <div class="container mx-auto px-4 py-3 space-y-3">
+                <a href="index.html#about" class="block text-gray-300 hover:text-primary-500 transition-colors py-2 border-b border-gray-700">About</a>
+                <a href="index.html#process" class="block text-gray-300 hover:text-primary-500 transition-colors py-2 border-b border-gray-700">Process</a>
+                <a href="index.html#portfolio" class="block text-gray-300 hover:text-primary-500 transition-colors py-2 border-b border-gray-700">Portfolio</a>
+                <a href="index.html#pricing" class="block text-gray-300 hover:text-primary-500 transition-colors py-2 border-b border-gray-700">Pricing</a>
+                <a href="https://x.com/meet244" target="_blank" class="flex items-center justify-center bg-dark-700 hover:bg-dark-600 text-gray-400 hover:text-white py-2 px-4 rounded-md transition-all duration-300 text-center mt-4">
+                    <span class="font-bold mr-1" style="font-family: Arial, sans-serif;">𝕏</span>
+                    <span class="ml-1">Follow @meet244</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Privacy Policy Content -->
+    <section class="pt-32 pb-20 bg-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="mb-12 text-center">
+                <h1 class="text-4xl md:text-5xl font-black mb-4 uppercase">Privacy Policy</h1>
+                <p class="text-gray-600">Last Updated: April 13, 2025</p>
+            </div>
+            
+            <div class="prose prose-lg max-w-none">
+                <h2 class="text-2xl font-bold mb-4 text-dark-800">1. Introduction</h2>
+                <p class="mb-6">At Fivoon, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your personal information when you use our MVP and SaaS development services. By accessing our website or using our services, you agree to the terms outlined in this policy.</p>
+                
+                <h2 class="text-2xl font-bold mb-4 text-dark-800">2. Information We Collect</h2>
+                <p class="mb-3">We may collect the following types of information:</p>
+                <ul class="list-disc pl-6 mb-6 space-y-2">
+                    <li><strong>Contact information:</strong> Name, email address, phone number, company name, and job title</li>
+                    <li><strong>Project information:</strong> Requirements, specifications, and other details related to your MVP development</li>
+                    <li><strong>Payment information:</strong> Billing details and transaction records</li>
+                    <li><strong>Communication records:</strong> Messages, emails, and call logs related to our services</li>
+                    <li><strong>Technical information:</strong> IP address, browser type, device information, and site usage data</li>
+                </ul>
+                
+                <h2 class="text-2xl font-bold mb-4 text-dark-800">3. How We Use Your Information</h2>
+                <p class="mb-3">We use your information for the following purposes:</p>
+                <ul class="list-disc pl-6 mb-6 space-y-2">
+                    <li>To provide, maintain, and improve our MVP development services</li>
+                    <li>To communicate with you about your project's progress and requirements</li>
+                    <li>To process payments and maintain billing records</li>
+                    <li>To send important service announcements and updates</li>
+                    <li>To respond to your inquiries, comments, or concerns</li>
+                    <li>To personalize and enhance your experience with our services</li>
+                    <li>To analyze and improve our website and service offerings</li>
+                </ul>
+                
+                <h2 class="text-2xl font-bold mb-4 text-dark-800">4. Data Protection</h2>
+                <p class="mb-6">We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, accidental loss, alteration, or disclosure. Your project information is treated with strict confidentiality, and we work with our team members under confidentiality agreements. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+                
+                <h2 class="text-2xl font-bold mb-4 text-dark-800">5. Information Sharing</h2>
+                <p class="mb-3">We do not sell, rent, or trade your personal information. We may share your information with:</p>
+                <ul class="list-disc pl-6 mb-6 space-y-2">
+                    <li>Service providers who help us operate our business (e.g., payment processors, hosting providers)</li>
+                    <li>Professional advisors such as lawyers, auditors, and insurers</li>
+                    <li>Government authorities when required by law or to protect our rights</li>
+                </ul>
+                
+                <h2 class="text-2xl font-bold mb-4 text-dark-800">6. Your Rights</h2>
+                <p class="mb-3">Depending on your location, you may have the following rights regarding your personal information:</p>
+                <ul class="list-disc pl-6 mb-6 space-y-2">
+                    <li>Access and receive a copy of your personal data</li>
+                    <li>Rectify inaccurate or incomplete information</li>
+                    <li>Request deletion of your personal data</li>
+                    <li>Object to or restrict the processing of your data</li>
+                    <li>Data portability (receiving your data in a structured, commonly used format)</li>
+                    <li>Withdraw consent at any time (where processing is based on consent)</li>
+                </ul>
+                
+                <h2 class="text-2xl font-bold mb-4 text-dark-800">7. Cookies and Similar Technologies</h2>
+                <p class="mb-6">We use cookies and similar tracking technologies to enhance your experience on our website, analyze usage patterns, and deliver personalized content. You can control cookies through your browser settings, but disabling certain cookies may limit your ability to use some features of our site.</p>
+                
+                <h2 class="text-2xl font-bold mb-4 text-dark-800">8. Changes to This Policy</h2>
+                <p class="mb-6">We may update this Privacy Policy from time to time. The most current version will always be posted on our website with the effective date. We encourage you to review this policy periodically to stay informed about how we protect your information.</p>
+                
+                <h2 class="text-2xl font-bold mb-4 text-dark-800">9. Contact Us</h2>
+                <p class="mb-6">If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at <a href="mailto:fivoonintelligence@gmail.com" class=" hover:underline">fivoonintelligence@gmail.com</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="mb-4">
+                        <img src="logo.png" alt="Fivoon" class="h-16 filter brightness-0 invert">
+                    </div>
+                    <p class="text-gray-400 mb-4">Ship your MVP in 2 weeks. Fast, high-quality development for startups and businesses.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-primary-500">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-primary-500 transition-colors">Why We're Different</a></li>
+                        <li><a href="index.html#process" class="text-gray-400 hover:text-primary-500 transition-colors">How We Ship Fast</a></li>
+                        <li><a href="index.html#pricing" class="text-gray-400 hover:text-primary-500 transition-colors">Pricing</a></li>
+                        <li><a href="https://cal.com/fivoon/30min" target="_blank" class="text-gray-400 hover:text-primary-500 transition-colors">Schedule Call</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-primary-500">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="privacy-policy.html" class="text-gray-400 hover:text-primary-500 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="text-gray-400 hover:text-primary-500 transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-primary-500">Get Started</h4>
+                    <div class="mt-4">
+                        <div class="flex items-start mb-2">
+                            <i class="fas fa-envelope text-primary-500 mt-1 mr-2"></i>
+                            <a href="mailto:fivoonintelligence@gmail.com" class="text-gray-400 hover:text-primary-500 transition-colors">fivoonintelligence@gmail.com</a>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary-500 mt-1 mr-2"></i>
+                            <span class="text-gray-400">Remote</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 Fivoon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html> 
