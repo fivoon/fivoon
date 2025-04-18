@@ -58,10 +58,10 @@
       gtag('config', 'G-9E7JQ25YMX');
     </script>
     <!-- Header -->
-    <header class="bg-dark-900 text-white py-4 z-50 fixed w-full shadow-lg transition-all duration-300">
+    <header class="bg-dark-900 text-white py-3 z-50 fixed w-full shadow-lg transition-all duration-300">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <div class="flex items-center">
-                <img src="logo.png" alt="Fivoon" class="h-10">
+                <img src="logo.png" alt="Fivoon" class="h-8 md:h-10">
             </div>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="#about" class="text-gray-300 hover:text-primary-500 transition-colors font-medium text-base relative group">
@@ -90,24 +90,22 @@
                     </span>
                     <span class="px-3 py-2 font-medium text-sm">Follow Us</span>
                 </a>
-                <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-primary-500 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+                <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-primary-500 focus:outline-none p-2 rounded-md">
+                    <div class="w-6 h-5 relative flex flex-col justify-between">
+                        <span class="w-full h-0.5 bg-gray-300 transform transition-all duration-300 rounded-full origin-left mobile-menu-bar"></span>
+                        <span class="w-full h-0.5 bg-gray-300 transform transition-all duration-300 rounded-full mobile-menu-bar"></span>
+                        <span class="w-full h-0.5 bg-gray-300 transform transition-all duration-300 rounded-full origin-left mobile-menu-bar"></span>
+                    </div>
                 </button>
             </div>
         </div>
         <!-- Mobile menu, hidden by default -->
-        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 shadow-lg w-full z-50 absolute top-full left-0">
-            <div class="container mx-auto px-4 py-3 space-y-3">
-                <a href="#about" class="block text-gray-300 hover:text-primary-500 transition-colors py-2 border-b border-gray-700">About</a>
-                <a href="#process" class="block text-gray-300 hover:text-primary-500 transition-colors py-2 border-b border-gray-700">Process</a>
-                <a href="#faq" class="block text-gray-300 hover:text-primary-500 transition-colors py-2 border-b border-gray-700">FAQs</a>
-                <a href="#pricing" class="block text-gray-300 hover:text-primary-500 transition-colors py-2 border-b border-gray-700">Pricing</a>
-                <a href="https://x.com/meet244" target="_blank" class="flex items-center justify-center bg-dark-700 hover:bg-dark-600 text-gray-400 hover:text-white py-2 px-4 rounded-md transition-all duration-300 text-center mt-4">
-                    <span class="font-bold mr-1" style="font-family: Arial, sans-serif;">𝕏</span>
-                    <span class="ml-1">Follow @meet244</span>
-                </a>
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 shadow-lg w-full z-50 absolute top-full left-0 border-t border-gray-700 transform transition-all duration-300">
+            <div class="container mx-auto px-4 py-3">
+                <a href="#about" class="block text-gray-300 hover:text-primary-500 transition-colors py-4 border-b border-gray-700 text-lg">About</a>
+                <a href="#process" class="block text-gray-300 hover:text-primary-500 transition-colors py-4 border-b border-gray-700 text-lg">Process</a>
+                <a href="#pricing" class="block text-gray-300 hover:text-primary-500 transition-colors py-4 border-b border-gray-700 text-lg">Pricing</a>
+                <a href="#faq" class="block text-gray-300 hover:text-primary-500 transition-colors py-4 text-lg">FAQs</a>
             </div>
         </div>
     </header>
@@ -347,7 +345,7 @@
                     <div class="p-8 text-center">
                         <h3 class="text-3xl font-black text-dark-800 mb-6 uppercase">SaaS Powerhouse</h3>
                         <div class="mb-6">
-                            <span class="text-5xl font-black text-dark-800">$1,499</span>
+                            <span class="text-5xl font-black text-dark-800">$1,299</span>
                         </div>
                         <p class="text-dark-800 font-medium mb-6">Complete SaaS solution with advanced features and premium design in 2 weeks</p>
                     </div>
@@ -641,7 +639,6 @@
                     e.preventDefault();
                     e.stopPropagation();
                     mobileMenu.classList.toggle('hidden');
-                    console.log('Mobile menu toggled');
                 });
                 
                 // Hide menu when clicking on menu items
@@ -658,8 +655,6 @@
                         mobileMenu.classList.add('hidden');
                     }
                 });
-            } else {
-                console.error('Mobile menu elements not found');
             }
         });
         
@@ -670,7 +665,6 @@
         if (mobileMenuButton && mobileMenu) {
             mobileMenuButton.addEventListener('click', function() {
                 mobileMenu.classList.toggle('hidden');
-                console.log('Mobile menu clicked');
             });
         }
     </script>

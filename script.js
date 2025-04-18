@@ -9,19 +9,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.getElementById('mobile-menu');
     
     if (mobileMenuButton && mobileMenu) {
-        console.log('Mobile menu elements found');
-        
         // Force initial state
         mobileMenu.classList.add('hidden');
         
         mobileMenuButton.addEventListener('click', function(e) {
-            console.log('Mobile menu button clicked');
             e.preventDefault();
             e.stopPropagation();
             
             // Toggle the menu visibility
             mobileMenu.classList.toggle('hidden');
-            console.log('Menu visibility toggled. Hidden:', mobileMenu.classList.contains('hidden'));
+            // Toggle active class for hamburger animation
+            mobileMenuButton.classList.toggle('active');
         });
         
         // Close menu when clicking menu items
@@ -29,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         menuLinks.forEach(link => {
             link.addEventListener('click', function() {
                 mobileMenu.classList.add('hidden');
-                console.log('Menu closed after clicking link');
+                mobileMenuButton.classList.remove('active');
             });
         });
         
@@ -37,10 +35,19 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('click', function(e) {
             if (!mobileMenu.contains(e.target) && e.target !== mobileMenuButton && !mobileMenuButton.contains(e.target)) {
                 mobileMenu.classList.add('hidden');
+                mobileMenuButton.classList.remove('active');
+            }
+        });
+        
+        // Close menu on window resize if viewport becomes desktop size
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.classList.remove('active');
             }
         });
     } else {
-        console.error('Mobile menu elements not found');
+        // Removed console.error
     }
     
     // Throttle function to limit how often a function runs
@@ -67,14 +74,18 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
+                // Adjust offset based on screen size for better mobile experience
+                const offset = window.innerWidth < 768 ? 80 : 100;
+                
                 window.scrollTo({
-                    top: targetElement.offsetTop - 100,
+                    top: targetElement.offsetTop - offset,
                     behavior: 'smooth'
                 });
                 
                 // Close mobile menu if it's open
                 if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                     mobileMenu.classList.add('hidden');
+                    mobileMenuButton.classList.remove('active');
                 }
             }
         });
@@ -91,7 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const scrollingDown = scrollY > lastScrollY;
             
             // Hide header when scrolling down, show when scrolling up
-            if (scrollingDown && scrollY > 100) {
+            // But don't hide it on mobile when scrollY is small to avoid jarring experience
+            if (scrollingDown && scrollY > (window.innerWidth < 768 ? 200 : 100)) {
                 header.classList.add('hidden');
             } else {
                 header.classList.remove('hidden');
